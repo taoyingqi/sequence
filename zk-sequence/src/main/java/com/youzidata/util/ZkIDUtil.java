@@ -120,7 +120,9 @@ public class ZkIDUtil {
      * @return
      */
     private String ExtractId(String str) {
+        System.out.println("str=" + str);
         int index = str.lastIndexOf(nodeName);// 20
+        System.out.println("index=" + index);
         if (index >= 0) {
             index += nodeName.length();
             return index <= str.length() ? str.substring(index) : "";
@@ -153,7 +155,6 @@ public class ZkIDUtil {
                     client.delete(ourPath);
                 }
             });
-
         }
         return ExtractId(ourPath);
     }
